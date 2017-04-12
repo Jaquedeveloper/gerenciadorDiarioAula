@@ -1,0 +1,19 @@
+<div class="mdl-layout__drawer">
+ <h2> Aulas </h2>
+ <my-date-picker name="mydate" [options]="myDatePickerOptions" [(ngModel)]="model" required (dateChanged)="onDateChanged()"></my-date-picker>
+<td *ngFor='let aula of aulas' class="mdl-list__item mdl-shadow--2dp" (click)='click(aula)'  [ngStyle]="{'background-color': aula.click ? 'grey' : 'white'}">
+  <tr>{{aula.salaNome}}</tr>
+  <tr>{{aula.materia}}</tr>
+  <tr>{{aula.inicio}} as {{aula.fim}}</tr>
+</td>
+</div>
+
+<style type="text/css">
+  tr{
+    width: 100%;
+    padding: 2px 2px 2px 2px;
+  }
+  .mdl-layout__drawer{
+    width: 250px;
+  }
+</style>

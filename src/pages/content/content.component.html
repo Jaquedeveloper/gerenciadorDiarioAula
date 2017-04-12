@@ -1,0 +1,113 @@
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">{{aula?.dia}} {{sala?.descricao}} {{aula?.materia}}</h2>
+  </div>
+</div>
+<div class="mdl-grid">
+  <div class="mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
+    <div class="mdl-card">
+      <div class="mdl-card__title">Presença e anotações</div>
+      
+      <span *ngFor='let aluno of alunos' class="mdl-accordion mdl-chip--contact mdl-chip--deletable" 
+      (click)='aluno.mostrar = aluno.mostrar ? false : true; aluno.actions = false'>
+        <img class="mdl-chip__contact" src="assets/user.jpg"/>
+        <span class="mdl-chip__text">{{aluno.nome}}</span>
+        <span *ngIf='!aluno.mostrar && !aluno.faltou' class="mdl-chip__contact mdl-color--teal mdl-color-text--white"
+        (click)='present($event, aluno)'>P</span>
+        <span *ngIf='!aluno.mostrar && aluno.faltou' class="mdl-chip__contact mdl-color--teal mdl-color-text--white"
+        (click)='present($event, aluno)'>F</span>
+        <a *ngIf='aluno.mostrar' href="#" (click)='$event.stopPropagation(); aluno.actions = aluno.actions ? false : true' class="mdl-chip__action">
+        <i class="material-icons">more_vert</i>
+        </a>
+        <div *ngIf='aluno.actions'>
+         <modal-ocorrencias (click)='$event.stopPropagation();' [aluno]='aluno'></modal-ocorrencias>
+        </div>
+        <div *ngIf='aluno.mostrar' class="mdl-card ">
+          <div class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">Registro de ocorrencias</div>
+          <ul style="list-style-type: circle;">
+              <li *ngFor='let ocorrencia of aluno.ocorrencia'>{{ocorrencia}}</li>
+          </ul>
+          <tr >
+            <td class='width-33'>
+            <tr>
+              nasc.
+            </tr><tr>
+              {{aluno.nascimento}}
+            </tr>
+            </td>
+            <td class='width-33'>
+            <tr>
+              responsavel
+            </tr><tr>
+              {{aluno.responsavel}}
+            </tr>
+            </td>
+            <td class='width-33'>
+            <tr>
+              contato
+            </tr><tr>
+              {{aluno.contato}}
+            </tr>
+            </td>
+          </tr> 
+        </div>
+      </span>
+
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+    <div class="mdl-card">
+      <div class="mdl-card__title">
+        Plano de aula
+      </div>
+      <div class="mdl-card">
+        <td class="mdl-list__item mdl-shadow--2dp" *ngFor='let plan of planAula'>
+          <tr>{{plan.descricao}}</tr>
+          <br>
+          <tr>{{plan.inicio}} as {{plan.fim}}</tr>
+        </td>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<style type="text/css">
+  .mdl-cell--8-col{
+    /*min-height: 100%;*/
+    padding: 10px 20px 10px 10px;
+    background-color: white;
+  }
+  .mdl-cell--4-col{
+    /*min-height: 100%;*/
+    background-color: white;
+  }
+  .mdl-card{
+    width: 100%;
+    min-height: 100px
+  }
+  .demo-card-square.mdl-card {
+    width: 100%;
+    min-height: 50px;
+    background:  white;
+  }
+  .mdl-color--teal{
+    float: right;
+    margin-right: -4px;
+  }
+  .mdl-chip__action{
+    float: right;
+    padding: 5px 5px 0px 0px;
+  }
+  .mdl-accordion{
+    border-radius: 16px;
+    background-color: #dedede;
+    padding: 5px 5px 10px 5px;
+  }
+  .width-33{
+    width : 50%;
+  }
+</style>

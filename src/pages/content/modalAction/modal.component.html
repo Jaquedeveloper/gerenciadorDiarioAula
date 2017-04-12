@@ -1,0 +1,52 @@
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+         (click)='$event.stopPropagation();showModal()'>
+            Registrar ocorrência
+          </button>
+
+<dialog #dialog id="dialog" class="mdl-dialog">
+  <h3 class="mdl-dialog__title">Registrar ocorrência</h3>
+  <div class="mdl-dialog__content">
+     <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+      <img class="mdl-chip__contact" src="assets/user.jpg"/>
+      <span class="mdl-chip__text">{{aluno?.nome}}</span>
+  </span>
+  <br>
+  <br>
+  <label>Qualificação</label>
+  <tr>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+        <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+        <span class="mdl-radio__label">leve</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+        <span class="mdl-radio__label">médio</span>
+      </label>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+        <span class="mdl-radio__label">grave</span>
+      </label>
+  </tr>
+  <!-- <br> -->
+  <div class="mdl-textfield mdl-js-textfield">
+  <label>ocorrência</label>
+    <textarea [(ngModel)]="model" class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+    <label class="mdl-textfield__label" for="sample5"></label>
+  </div>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button (click)='salvar()' type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">salvar</button>
+    <button (click)='closeModal()' type="button" class="mdl-button">cancelar</button>
+  </div>
+</dialog>
+
+
+<style type="text/css">
+  .mdl-dialog{
+    width: 400px;
+    /*height: 400px*/
+  }
+  .mdl-chip--contact{
+    width: 100%;
+  }
+</style>

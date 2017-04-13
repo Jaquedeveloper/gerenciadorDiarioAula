@@ -17,13 +17,14 @@ export class Sidebar {
 
   public static selectAula = new EventEmitter<any>();
 
-  private model: any = this.setToday();
+  private model = this.setToday();
 
   aulas = aulas.map(x =>{ x.dia = this.model.date; x['click'] = false; x['salaNome'] = salas.filter(y => y.id === x.salaId)[0].descricao;  return x;});
  
   click(aula : Aula){
     this.aulas.forEach(x =>{ x['click'] = false;});
-    aula.dia = new Date(this.model.date.year, this.model.date.month -1, this.model.date.day).toLocaleDateString();
+    let dia = new Date(this.model.date.year, this.model.date.month -1, this.model.date.day);
+    aula.dia = `${this.dayOfWeekAsString(dia.getDay() -1)}, ${dia.toLocaleDateString()}`;
     aula['click'] = true;
     Sidebar.selectAula.emit(aula);
   }
@@ -41,12 +42,15 @@ export class Sidebar {
 
   setToday(): any {
     let date = new Date();
-    return {
-    date: {
+    return { date: {
         year: date.getFullYear(),
         month: date.getMonth() + 1,
         day: date.getDate()
       }
     };
+  }
+
+  dayOfWeekAsString(dayIndex) : string {
+    return ["Seg","Ter","Qua","Qui","Sex","Sab","Dom"][dayIndex];
   }
 }

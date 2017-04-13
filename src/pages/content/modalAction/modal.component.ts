@@ -14,8 +14,6 @@ export class ModalOcorrencia implements OnInit {
   @Input() aluno : Aluno;
   ngOnInit(){
     dialogPolyfill.registerDialog(this.dialog.nativeElement);
-    console.log(this.aluno);
-
   }
 
   model : string;

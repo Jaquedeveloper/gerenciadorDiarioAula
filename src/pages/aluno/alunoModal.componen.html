@@ -1,0 +1,37 @@
+<button (click)='$event.stopPropagation();showModal()' class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+  <i class="material-icons">add</i>
+</button> 
+
+<dialog #dialog id="dialog" class="mdl-dialog">
+  <h3 class="mdl-dialog__title">Cadastrar aluno <br> <h4 >{{sala?.descricao}}</h4></h3>
+  <!-- <div class="mdl-dialog__content"> -->
+    <label>Nome</label>
+    <input class="mdl-textfield__input" [(ngModel)]="aluno.nome" type="text">
+    <label>responsavel</label>
+    <input class="mdl-textfield__input" [(ngModel)]="aluno.responsavel" type="text">
+    <label>contato</label>
+    <input class="mdl-textfield__input" [(ngModel)]="aluno.contato" type="text">
+    <label>nascimento</label>
+    <input class="mdl-textfield__input" [(ngModel)]="aluno.nascimento" type="text">     
+  <!-- </div> -->
+  <div class="mdl-dialog__actions">
+    <button (click)='salvar()' type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">salvar</button>
+    <button (click)='closeModal()' type="button" class="mdl-button">cancelar</button>
+  </div>
+</dialog>
+
+
+<style type="text/css">
+  .mdl-dialog{
+    width: 400px;
+    /*height: 400px*/
+  }
+  .mdl-chip--contact{
+    width: 100%;
+  }
+  .mdl-button--fab{
+    position: absolute;
+    bottom: 4%;
+    right: 3%;
+  }
+</style>

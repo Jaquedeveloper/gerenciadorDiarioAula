@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { Sidebar } from '../pages/sidebar/sideBar.component';
 import { Toolbar } from '../pages/toolbar/toolbar.component';
 import { Content } from '../pages/content/content.component';
+import { AlunoModal } from '../pages/aluno/alunoModal.componen';
 import { ModalOcorrencia } from '../pages/content/modalAction/modal.component';
 import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Sidebar, Toolbar, Content, ModalOcorrencia
+    Sidebar, Toolbar, Content, ModalOcorrencia, AlunoModal
   ],
   // entryComponents : [ Sidebar],
   imports: [

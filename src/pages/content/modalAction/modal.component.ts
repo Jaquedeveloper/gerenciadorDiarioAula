@@ -27,6 +27,7 @@ export class ModalOcorrencia implements OnInit {
   }
 
   salvar(){
+    if(!this.aluno.ocorrencia) this.aluno.ocorrencia = [];
     this.aluno.ocorrencia.push(this.model);
     this.model = '';
     this.dialog.nativeElement.close();

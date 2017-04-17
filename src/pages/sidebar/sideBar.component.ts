@@ -9,7 +9,6 @@ import { Aula, PlanoAula, Aluno, Sala } from '../../models/models';
 })
 export class Sidebar {
   private myDatePickerOptions: IMyOptions = {
-    // other options...
     dateFormat: 'dd.mm.yyyy',
     showInputField : true,
     showClearDateBtn : false,

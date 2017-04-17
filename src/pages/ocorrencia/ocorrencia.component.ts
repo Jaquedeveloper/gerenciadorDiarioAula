@@ -1,12 +1,12 @@
 import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
-import { Sidebar } from '../../sidebar/sideBar.component';
-import { Aula, PlanoAula, Aluno, Sala } from '../../../models/models';
-import { planos, salas, alunos } from '../../../models/data';
+import { Sidebar } from '../sidebar/sideBar.component';
+import { Aula, PlanoAula, Aluno, Sala } from '../../models/models';
+import { planos, salas, alunos } from '../../models/data';
 import * as dialogPolyfill from 'dialog-polyfill';
 
 @Component({
   selector: 'modal-ocorrencias',
-  templateUrl: 'modal.component.html'
+  templateUrl: 'ocorrencia.component.html'
 }) 
 export class ModalOcorrencia implements OnInit {
 

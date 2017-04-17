@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppComponent, declarations, imports} from './app.module';
+import { AlunoModal, declarations,imports} from '../../app/app.module';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('AlunoModal', () => {
+  let component: AlunoModal;
+  let fixture: ComponentFixture<AlunoModal>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AlunoModal);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

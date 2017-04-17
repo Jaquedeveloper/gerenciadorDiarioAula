@@ -8,22 +8,32 @@ import { Sidebar } from '../pages/sidebar/sideBar.component';
 import { Toolbar } from '../pages/toolbar/toolbar.component';
 import { Content } from '../pages/content/content.component';
 import { AlunoModal } from '../pages/aluno/alunoModal.componen';
-import { ModalOcorrencia } from '../pages/content/modalAction/modal.component';
+import { ModalOcorrencia } from '../pages/ocorrencia/ocorrencia.component';
 import { MyDatePickerModule } from 'mydatepicker';
 
-@NgModule({
-  declarations: [
+export const declarations = [
     AppComponent,
     Sidebar, Toolbar, Content, ModalOcorrencia, AlunoModal
-  ],
-  // entryComponents : [ Sidebar],
-  imports: [
+  ];
+  export const imports = [
     BrowserModule,
     FormsModule,
     HttpModule,
     MyDatePickerModule
-  ],
+  ];
+
+@NgModule({
+  declarations: declarations,
+  // entryComponents : [ Sidebar],
+  imports: imports,
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export * from './app.component';
+export * from '../pages/sidebar/sideBar.component';
+export * from '../pages/toolbar/toolbar.component';
+export * from '../pages/content/content.component';
+export * from '../pages/aluno/alunoModal.componen';
+export * from '../pages/ocorrencia/ocorrencia.component';

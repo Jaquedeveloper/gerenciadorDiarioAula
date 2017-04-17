@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppComponent, declarations, imports} from './app.module';
+import { ModalOcorrencia, declarations, imports} from '../../app/app.module';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('ModalOcorrencia', () => {
+  let component: ModalOcorrencia;
+  let fixture: ComponentFixture<ModalOcorrencia>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(ModalOcorrencia);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

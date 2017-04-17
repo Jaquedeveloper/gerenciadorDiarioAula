@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppComponent, declarations, imports} from './app.module';
+import { Toolbar, declarations, imports} from '../../app/app.module';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('Toolbar', () => {
+  let component: Toolbar;
+  let fixture: ComponentFixture<Toolbar>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(Toolbar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

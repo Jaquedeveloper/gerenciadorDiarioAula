@@ -1,5 +1,5 @@
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-         (click)='$event.stopPropagation();showModal()'>
+<button id='openModal' class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+         (click)='$event?.stopPropagation();showModal()'>
             Registrar ocorrência
           </button>
 
@@ -8,7 +8,7 @@
   <div class="mdl-dialog__content">
      <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
       <img class="mdl-chip__contact" src="assets/user.jpg"/>
-      <span class="mdl-chip__text">{{aluno?.nome}}</span>
+      <span id='alunoNome' class="mdl-chip__text">{{aluno?.nome}}</span>
   </span>
   <br>
   <br>
@@ -30,13 +30,13 @@
   <!-- <br> -->
   <div class="mdl-textfield mdl-js-textfield">
   <label>ocorrência</label>
-    <textarea [(ngModel)]="model" class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-    <label class="mdl-textfield__label" for="sample5"></label>
+    <textarea [(ngModel)]="model" class="mdl-textfield__input" type="text" rows= "3" id="ocorrenciaId" ></textarea>
+    <label class="mdl-textfield__label" for="ocorrenciaId"></label>
   </div>
   </div>
   <div class="mdl-dialog__actions">
-    <button (click)='salvar()' type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">salvar</button>
-    <button (click)='closeModal()' type="button" class="mdl-button">cancelar</button>
+    <button id='btnSalvar' (click)='salvar()' type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">salvar</button>
+    <button id='closeModal' (click)='closeModal()' type="button" class="mdl-button">cancelar</button>
   </div>
 </dialog>
 

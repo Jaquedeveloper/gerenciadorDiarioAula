@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Toolbar, declarations, imports} from '../../app/app.module';
+import { Toolbar, DECLARATIONS, IMPORTS} from '../../app/app.module';
 
 describe('Toolbar', () => {
   let component: Toolbar;
@@ -8,8 +8,8 @@ describe('Toolbar', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: declarations,
-      imports : imports
+      declarations: DECLARATIONS,
+      imports : IMPORTS
     })
     .compileComponents();
   }));

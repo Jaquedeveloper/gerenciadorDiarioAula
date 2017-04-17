@@ -1,6 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import {IMyOptions, IMyDateModel } from 'mydatepicker';
-import { aulas, salas } from '../../models/data';
+import { aulas, salas } from '../../models/mock';
 import { Aula, PlanoAula, Aluno, Sala } from '../../models/models';
 
 @Component({
@@ -19,7 +19,7 @@ export class Sidebar {
 
   public static selectAula = new EventEmitter<any>();
 
-  private model = this.setToday();
+  private model = this.setDatePicker(new Date());
 
   aulas = aulas.map(x =>{ x.dia = this.model.date; x['click'] = false; x['salaNome'] = salas.filter(y => y.id === x.salaId)[0].descricao;  return x;});
  
@@ -42,8 +42,7 @@ export class Sidebar {
     }
   }
 
-  setToday(): any {
-    let date = new Date();
+  setDatePicker(date : Date): any {
     return { date: {
         year: date.getFullYear(),
         month: date.getMonth() + 1,

@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
 import { Sidebar } from '../sidebar/sideBar.component';
 import { Aula, PlanoAula, Aluno, Sala } from '../../models/models';
-import * as data from '../../models/data';
+import * as data from '../../models/mock';
 import * as dialogPolyfill from 'dialog-polyfill';
 
 @Component({
@@ -11,7 +11,7 @@ import * as dialogPolyfill from 'dialog-polyfill';
 export class AlunoModal implements OnInit {
 
   @ViewChild('dialog') dialog : ElementRef
-  @Input() sala : Sala;
+  @Input() sala : Sala = new Sala();
   @Input() alunos : Aluno[];
   aluno : Aluno = new Aluno();
   ngOnInit(){

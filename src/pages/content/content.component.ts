@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Sidebar } from '../sidebar/sideBar.component';
 import { Aula, PlanoAula, Aluno, Sala } from '../../models/models';
-import { planos, salas, alunos } from '../../models/data';
+import { planos, salas, alunos } from '../../models/mock';
 @Component({
   selector: 'content',
   templateUrl: 'content.component.html'
@@ -21,7 +21,7 @@ export class Content {
         this.alunos = null;
       }
     })
-  }
+  }  
   aula : Aula;
   mostrar : false;
   planAula : PlanoAula[];

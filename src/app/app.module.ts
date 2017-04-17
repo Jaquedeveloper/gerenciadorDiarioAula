@@ -11,11 +11,11 @@ import { AlunoModal } from '../pages/aluno/alunoModal.componen';
 import { ModalOcorrencia } from '../pages/ocorrencia/ocorrencia.component';
 import { MyDatePickerModule } from 'mydatepicker';
 
-export const declarations = [
+export const DECLARATIONS = [
     AppComponent,
     Sidebar, Toolbar, Content, ModalOcorrencia, AlunoModal
   ];
-  export const imports = [
+  export const IMPORTS = [
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -23,9 +23,9 @@ export const declarations = [
   ];
 
 @NgModule({
-  declarations: declarations,
+  declarations: DECLARATIONS,
   // entryComponents : [ Sidebar],
-  imports: imports,
+  imports: IMPORTS,
   providers: [],
   bootstrap: [AppComponent]
 })

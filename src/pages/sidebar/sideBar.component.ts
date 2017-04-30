@@ -26,7 +26,8 @@ export class Sidebar {
   click(aula : Aula){
     this.aulas.forEach(x =>{ x['click'] = false;});
     let dia = new Date(this.model.date.year, this.model.date.month -1, this.model.date.day);
-    aula.dia = `${this.dayOfWeekAsString(dia.getDay() -1)}, ${dia.toLocaleDateString()}`;
+    aula.dia = `${this.dayOfWeekAsString(dia.getDay())}, ${dia.getDate()}/${dia.getMonth()}/${dia.getFullYear()}`;
+    // debugger;
     aula['click'] = true;
     Sidebar.selectAula.emit(aula);
   }
@@ -52,6 +53,6 @@ export class Sidebar {
   }
 
   dayOfWeekAsString(dayIndex) : string {
-    return ["Seg","Ter","Qua","Qui","Sex","Sab","Dom"][dayIndex];
+    return ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"][dayIndex];
   }
 }

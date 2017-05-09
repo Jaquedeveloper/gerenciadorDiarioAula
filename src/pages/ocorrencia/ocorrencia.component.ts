@@ -27,7 +27,6 @@ export class ModalOcorrencia implements OnInit {
   }
 
   salvar(){
-    debugger;
     if(!this.aluno.ocorrencia) this.aluno.ocorrencia = [];
     this.aluno.ocorrencia.push(this.model);
     this.model = '';

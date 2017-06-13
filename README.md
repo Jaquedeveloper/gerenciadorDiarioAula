@@ -1,5 +1,7 @@
 # DiarioProfessor
 
+[![Build Status](https://semaphoreci.com/api/v1/jalescardoso/diarioprofessor/branches/master/badge.svg)](https://semaphoreci.com/jalescardoso/diarioprofessor)
+
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
 Teste: https://docs.google.com/document/d/15jRizo2OTJoZOxQ6kTS3Q16SIzjLxM-yxdXAQA_lIzw/edit?usp=sharing

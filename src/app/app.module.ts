@@ -24,7 +24,6 @@ export const DECLARATIONS = [
 
 @NgModule({
   declarations: DECLARATIONS,
-  // entryComponents : [ Sidebar],
   imports: IMPORTS,
   providers: [],
   bootstrap: [AppComponent]

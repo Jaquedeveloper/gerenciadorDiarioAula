@@ -7,8 +7,15 @@ describe('diario-professor App', () => {
     page = new DiarioProfessorPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
+  it('deve clickar em aula e carregar dados', async () => {
+    await page.navigateTo('/');
+    await page.clickSideBar();
+  })
+
+  it('deve cadastrar novo aluno', async () => {
+    await page.clickAddStudent();
+    await page.addValues();
+    await page.clickFormStudent();
+  })
 });
+

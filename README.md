@@ -1,6 +1,6 @@
 # DiarioProfessor
 
-[![Build Status](https://semaphoreci.com/api/v1/jalescardoso/diarioprofessor/branches/master/badge.svg)](https://semaphoreci.com/jalescardoso/diarioprofessor)
+[![Build Status](https://semaphoreci.com/api/v1/jalescardoso/diarioprofessor/branches/aula/badge.svg)](https://semaphoreci.com/jalescardoso/diarioprofessor)
 
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 

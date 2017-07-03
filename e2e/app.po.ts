@@ -17,7 +17,7 @@ export class DiarioProfessorPage {
 
   async clickAddStudent() {
     await browser.waitForAngularEnabled(true);
-    await browser.wait(async () => $('add-aluno button').isPresent());
+    await browser.wait(async () => await $('add-aluno button').isPresent());
     await $('add-aluno button').click();
     await browser.sleep(500);
     await browser.waitForAngular();
@@ -25,7 +25,7 @@ export class DiarioProfessorPage {
 
   async addValues() {
     await browser.waitForAngularEnabled(true);
-    await browser.wait(async () => $('dialog.mdl-dialog').isPresent());
+    await browser.wait(async () => await $('dialog.mdl-dialog').isPresent());
     await $$('dialog input').each(async x => await x.sendKeys('teste'));
   }
 
